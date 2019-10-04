@@ -21,7 +21,7 @@ class Board {
 
         return spaces;
     }
-    
+
 
     drawHTMLBoard() {
         // for (let x = 0; x<this.columns; x++) {

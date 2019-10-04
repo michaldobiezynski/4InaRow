@@ -1,13 +1,13 @@
 class Token {
     constructor(owner, id) {
         this.owner = owner;
-        this.id = `token-${index}-${owner.id}`;
+        this.id = `token-${this.id}-${owner.id}`;
         this.dropped = false;
     }
 
     drawHTMLToken() {
 
-        const token =  document.createElement('<div>');
+        const token =  document.createElement("div");
         document.getElementById('game-board-underlay')
             .append(token);
         token.setAttribute("id", this.id);

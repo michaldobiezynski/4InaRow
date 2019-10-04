@@ -18,8 +18,7 @@ class Game {
     }
 
     startGame() {
-        this.style.display = 'none';
-        document.getElementById('play-area').style.opacity = '1';
+
     }
 
 }

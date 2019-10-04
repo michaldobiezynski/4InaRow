@@ -22,12 +22,19 @@ class Board {
     }
 
     drawHTMLBoard() {
-        for (let x = 0; x<this.columns; x++) {
-            for (let y = 0; y<this.columns; y++) {
-                this.spaces[x[y]].drawSVGSpace();
+        // for (let x = 0; x<this.columns; x++) {
+        //     for (let y = 0; y<this.columns; y++) {
+        //         this.spaces[x[y]].drawSVGSpace();
+        //
+        //     }
+        // }
 
+        for(let column of this.spaces) {
+            for (let space of column) {
+                space.drawSVGSpace();
             }
         }
+
     }
 
 }

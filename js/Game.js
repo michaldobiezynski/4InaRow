@@ -22,11 +22,8 @@ class Game {
     }
 
     get activePlayer() {
-        var result = this.players.find(function() {
-            return player.active === true;
-        });
+       return this.players.find( player.active === true);
 
-        return result;
     }
 
 }

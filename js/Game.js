@@ -6,13 +6,10 @@ class Game {
     }
 
     createPlayers() {
-        const players =[];
-
-        const players1 = new Player("Player 1", 1, "#e15258", true);
-        const players2 = new Player("Player 2", 2, "#e59a13");
-
-        players.push(players1);
-        players.push(players2);
+        const players =[
+            new Player("Player 1", 1, "#e15258", true),
+            new Player("Player 2", 2, "#e59a13")
+        ];
 
         return players;
     }

@@ -1,7 +1,7 @@
 class Token {
-    constructor(owner, id) {
+    constructor(owner, index) {
         this.owner = owner;
-        this.id = `token-${this.id}-${owner.id}`;
+        this.id = `token-${index}-${owner.id}`;
         this.dropped = false;
     }
 

@@ -25,4 +25,16 @@ class Game {
 
     }
 
+    handleKeydown(e) {
+        if(this.ready) {
+            if(e.key === "ArrowLeft") {
+                //move left
+            } else if(e.key === "ArrowRight") {
+                //move right
+            } else if(e.key === "ArrowDown") {
+                //play token
+            }
+        }
+    }
+
 }

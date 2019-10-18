@@ -5,26 +5,41 @@ class Game {
         this.ready = false;
     }
 
-    createPlayers() {
-        const players =[
-            new Player("Player 1", 1, "#e15258", true),
-            new Player("Player 2", 2, "#e59a13")
-        ];
 
+    /**
+     * Returns active player.
+     * @return  {Object}    player - The active player.
+     */
+    get activePlayer() {
+        return this.players.find(player => player.active);
+    }
+
+
+    /**
+     * Creates two player objects
+     * @return  {array}    An array of two player objects.
+     */
+    createPlayers() {
+        const players = [new Player('Player 1', 1, '#e15258', true),
+            new Player('Player 2', 2, '#e59a13')];
         return players;
     }
 
-    startGame() {
+
+    /**
+     * Initializes game.
+     */
+    startGame(){
         this.board.drawHTMLBoard();
-        this.activePlayer.activeTokens.drawHTMLToken();
+        this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
     }
 
-    get activePlayer() {
-       return this.players.find( player => player.active);
 
-    }
-
+    /**
+     * Branches code, depending on what key player presses
+     * @param	{Object}	e - Keydown event object
+     */
     handleKeydown(e) {
         if (this.ready) {
             if (e.key === "ArrowLeft") {
@@ -37,6 +52,10 @@ class Game {
         }
     }
 
+
+    /**
+     * Finds Space object to drop Token into, drops Token
+     */
     playToken(){
         let spaces = this.board.spaces;
         let activeToken = this.activePlayer.activeToken;
@@ -54,5 +73,4 @@ class Game {
             activeToken.drop(targetSpace);
         }
     }
-
 }

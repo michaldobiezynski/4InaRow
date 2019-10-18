@@ -3,40 +3,37 @@ class Board {
         this.rows = 6;
         this.columns = 7;
         this.spaces = this.createSpaces();
-
     }
 
+    /**
+     * Generates 2D array of spaces.
+     * @return  {array}     An array of space objects
+     */
     createSpaces() {
-        const spaces =[];
+        const spaces = [];
 
-        for(let i =0; i<this.columns; i++) {
-            const column =[];
+        for (let x = 0; x < this.columns; x++) {
+            const col = [];
 
-            for(let j =0; j<this.rows; j++) {
-                const space = new Space(i,j);
-                column.push(space);
+            for (let y = 0; y < this.rows; y++) {
+                const space = new Space(x, y);
+                col.push(space);
             }
-            spaces.push(column)
+
+            spaces.push(col);
         }
 
         return spaces;
     }
 
-
+    /**
+     * Draws associated SVG spaces for all game spaces.
+     */
     drawHTMLBoard() {
-        // for (let x = 0; x<this.columns; x++) {
-        //     for (let y = 0; y<this.columns; y++) {
-        //         this.spaces[x[y]].drawSVGSpace();
-        //
-        //     }
-        // }
-
-        for(let column of this.spaces) {
+        for (let column of this.spaces) {
             for (let space of column) {
                 space.drawSVGSpace();
             }
         }
-
     }
-
 }

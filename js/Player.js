@@ -47,11 +47,12 @@ class Player {
      * @return {Boolean}
      */
     checkTokens() {
-        if(this.tokens.length ==0) {
-            return false;
-        } else {
-            return true;
-        }
+        // if(this.tokens.length ==0) {
+        //     return false;
+        // } else {
+        //     return true;
+        // }
+        return this.unusedTokens.length ==0 ? false : true;
     }
 
 }

@@ -185,7 +185,7 @@ class Game {
         }
 
         if(this.activePlayer.checkTokens()) {
-            this.activePlayer.activeToken()
+            this.activePlayer.activeToken
         } else {
             this.gameOver("You are out of tokens, game over.")
         }

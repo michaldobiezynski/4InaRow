@@ -73,7 +73,10 @@ class Game {
             activeToken.drop(targetSpace);
         }
 
-        
+        activeToken.drop(targetSpace, function () {
+            //callback function
+            
+        })
     }
 
 

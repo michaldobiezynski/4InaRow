@@ -74,6 +74,22 @@ class Game {
         }
     }
 
+
+    /**
+     * Switches active player.
+     */
+    switchPlayers() {
+        this.players.forEach(function (player) {
+            if(player.active) {
+                player.active = false;
+            } else {
+                player.active = true;
+            }
+        });
+    }
+
+
+
     /**
      * Checks if there a winner on the board after each token drop.
      * @param   {Object}    Targeted space for dropped token.

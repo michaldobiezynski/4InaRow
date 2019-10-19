@@ -39,10 +39,10 @@ class Space {
      * object of the space's associated token.
      */
     getOwner() {
-        if(this.token != null) {
-            return this.token.owner
+        if(this.token === null) {
+            return null;
         } else {
-            return null
+            return this.token.owner;
         }
     }
 

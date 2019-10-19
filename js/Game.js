@@ -69,14 +69,16 @@ class Game {
         }
 
         if (targetSpace !== null) {
+
             game.ready = false;
-            activeToken.drop(targetSpace);
+
+            activeToken.drop(targetSpace, function () {
+                //callback function
+
+            })
         }
 
-        activeToken.drop(targetSpace, function () {
-            //callback function
-            
-        })
+
     }
 
 
@@ -169,6 +171,11 @@ class Game {
         return win;
     }
 
+    /**
+     * Updates game state after token is dropped.
+     * @param   {Object}  token  -  The token that's being dropped.
+     * @param   {Object}  target -  Targeted space for dropped token.
+     */
     updateGameState() {
 
     }

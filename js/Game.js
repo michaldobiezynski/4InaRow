@@ -177,18 +177,25 @@ class Game {
      * @param   {Object}  target -  Targeted space for dropped token.
      */
     updateGameState(token, target) {
+
         target.mark(token);
+
         if(this.checkForWin(target)) {
-            this.gameOver("You won!")
-        } else {
+
+            this.gameOver(`${target.owner.name} wins!`)
+        }
+        else {
             this.switchPlayers()
+
+            if(this.activePlayer.checkTokens()) {
+                this.activePlayer.activeToken
+            }
+            else {
+                this.gameOver("You are out of tokens..")
+            }
         }
 
-        if(this.activePlayer.checkTokens()) {
-            this.activePlayer.activeToken
-        } else {
-            this.gameOver("You are out of tokens, game over.")
-        }
+
 
     }
 

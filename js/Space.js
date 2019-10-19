@@ -31,4 +31,20 @@ class Space {
         this.token = token;
 
     }
+
+
+    /**
+     * Checks if space has an associated token to find its owner
+     * @return  {(null|Object)} Returns null or the owner
+     * object of the space's associated token.
+     */
+    getOwner() {
+        if(this.token != null) {
+            return this.token.owner
+        } else {
+            return null
+        }
+    }
+
+
 }

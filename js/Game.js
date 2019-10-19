@@ -104,9 +104,8 @@ class Game {
      * @param {string} message - Game over message.
      */
     gameOver(message) {
-       const element = document.getElementById('game-over');
-       element.style.display = "block";
-       element.textContent = message;
+        document.getElementById('game-over').style.display='block';
+        document.getElementById('game-over').textContent=message;
     }
 
 
@@ -188,11 +187,14 @@ class Game {
             this.switchPlayers()
 
             if(this.activePlayer.checkTokens()) {
-                this.activePlayer.activeToken
+
+                this.activePlayer.activeToken.drawHTMLToken()
+                this.ready = true;
             }
-            else {
+                else {
+
                 this.gameOver("You are out of tokens..")
-            }
+                }
         }
 
 

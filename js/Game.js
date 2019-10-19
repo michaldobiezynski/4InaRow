@@ -79,13 +79,16 @@ class Game {
      * Switches active player.
      */
     switchPlayers() {
-        this.players.forEach(function (player) {
-            if(player.active) {
-                player.active = false;
-            } else {
-                player.active = true;
-            }
-        });
+        // this.players.forEach(function (player) {
+        //     if(player.active) {
+        //         player.active = false;
+        //     } else {
+        //         player.active = true;
+        //     }
+        // });
+        for (let player of this.players) {
+            player.active = player.active === true ? false : true;
+        }
     }
 
 

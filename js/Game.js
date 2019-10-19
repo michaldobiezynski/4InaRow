@@ -89,6 +89,16 @@ class Game {
     }
 
 
+    /**
+     * Displays game over message.
+     * @param {string} message - Game over message.
+     */
+    gameOver(message) {
+       const element = document.getElementById('game-over');
+       element.style.display = "block";
+       element.textContent = message;
+    }
+
 
     /**
      * Checks if there a winner on the board after each token drop.

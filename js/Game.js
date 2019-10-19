@@ -74,7 +74,7 @@ class Game {
 
             activeToken.drop(targetSpace, function () {
                 //callback function
-
+                game.updateGameState(activeToken, targetSpace);
             })
         }
 

@@ -72,6 +72,8 @@ class Game {
             game.ready = false;
             activeToken.drop(targetSpace);
         }
+
+        
     }
 
 
@@ -164,5 +166,8 @@ class Game {
         return win;
     }
 
+    updateGameState() {
+
+    }
 
 }

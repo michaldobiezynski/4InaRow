@@ -116,16 +116,16 @@ class Game {
      */
 
     checkForWin(target){
-        const owner = target.token.owner;
+        const owner = target.getOwner()
         let win = false;
 
         // vertical
         for (let x = 0; x < this.board.columns; x++ ){
             for (let y = 0; y < this.board.rows - 3; y++){
-                if (this.board.spaces[x][y].owner === owner &&
-                    this.board.spaces[x][y+1].owner === owner &&
-                    this.board.spaces[x][y+2].owner === owner &&
-                    this.board.spaces[x][y+3].owner === owner) {
+                if (this.board.spaces[x][y].getOwner() === owner &&
+                    this.board.spaces[x][y+1].getOwner()  === owner &&
+                    this.board.spaces[x][y+2].getOwner()  === owner &&
+                    this.board.spaces[x][y+3].getOwner()  === owner) {
                     win = true;
                 }
             }
@@ -181,7 +181,7 @@ class Game {
 
         if(this.checkForWin(target)) {
 
-            this.gameOver(`${target.owner.name} wins!`)
+            this.gameOver(`${target.getOwner()} wins!`)
         }
         else {
             this.switchPlayers()
